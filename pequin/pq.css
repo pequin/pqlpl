@@ -18,3 +18,53 @@
 	margin: 0;
 	padding: 0;
 }
+
+body {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+
+main {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	perspective: 300px;
+}
+
+.pg {
+	position: relative;
+	height: 100vh;
+	transform-style: preserve-3d;
+}
+
+
+.pg section {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(188, 255, 80, 0.336);
+	transform: translateZ(0);
+}
+
+.pg .background {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgb(19, 255, 243);
+	transform: translateZ(-300px) scale(2);
+	background-image: url("/images/work.jpg");
+	background-size: cover;
+	background-position: center;
+}
