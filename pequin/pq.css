@@ -19,11 +19,22 @@
 	padding: 0;
 }
 
+#main-header {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: 64px;
+	background-color: rgba(66, 133, 133, 0.5);
+	pointer-events: none;
+}
+
 section {
 	position: relative;
 	height: 100vh;
 	width: auto;
 	overflow: hidden;
+	pointer-events: initial;
 	--offset: 0px;
 }
 
