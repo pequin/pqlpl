@@ -18,6 +18,66 @@ class PQLPL {
 
 	constructor() {
 
+		PQLPL.listeners();
+	}
+
+	static listeners() {
+
+		window.addEventListener("load", function() {
+
+			document.body.id = "loaded";
+
+			PQLPL.init();
+
+		}, false);
+	}
+
+	static daemon() {
+
+		const top = document.body.getBoundingClientRect().top * -1
+
+		Array.prototype.forEach.call(document.getElementsByClassName("ms"), function(ms) {
+
+			const offset = (ms.offsetTop - top) * -1;
+			const percent = 1 - Math.abs((ms.offsetTop - top) / ms.clientHeight);
+
+			ms.style.setProperty("--offset", offset + "px");
+
+			if (percent >= 0.25) {
+
+				ms.classList.add("v-25");
+
+			} else {
+
+				ms.classList.remove("v-25");
+			}
+
+			if (percent >= 0.50) {
+
+				ms.classList.add("v-50");
+
+			} else {
+
+				ms.classList.remove("v-50");
+			}
+
+			if (percent >= 0.75) {
+
+				ms.classList.add("v-75");
+
+			} else {
+
+				ms.classList.remove("v-75");
+			}
+
+		});
+
+		requestAnimationFrame(PQLPL.daemon);
+	}
+
+	static init() {
+
+		PQLPL.daemon();
 	}
 }
 
