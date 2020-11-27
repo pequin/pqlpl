@@ -18,6 +18,8 @@ class PQLPL {
 
 	constructor() {
 
+		this.mhHeight = 0;
+
 		PQLPL.listeners();
 	}
 
@@ -27,6 +29,8 @@ class PQLPL {
 
 			document.body.id = "loaded";
 
+			PQLPL.mhHeight = document.getElementById("main-header").clientHeight;
+
 			PQLPL.init();
 
 		}, false);
@@ -35,6 +39,13 @@ class PQLPL {
 	static daemon() {
 
 		const top = document.body.getBoundingClientRect().top * -1
+
+		const mh = document.getElementById("main-header");
+
+		if (top <= (PQLPL.mhHeight / 2)) {
+
+			mh.style.setProperty("--height", (PQLPL.mhHeight - top) + "px");
+		}
 
 		Array.prototype.forEach.call(document.getElementsByClassName("ms"), function(ms) {
 
