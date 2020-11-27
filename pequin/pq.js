@@ -41,7 +41,10 @@ class PQLPL {
 			const offset = (ms.offsetTop - top) * -1;
 			const percent = 1 - Math.abs((ms.offsetTop - top) / ms.clientHeight);
 
-			ms.style.setProperty("--offset", offset + "px");
+			if (percent >= 0) {
+
+				ms.style.setProperty("--offset", offset + "px");
+			}
 
 			if (percent >= 0.25) {
 
