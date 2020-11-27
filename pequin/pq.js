@@ -40,12 +40,8 @@ class PQLPL {
 
 		const top = document.body.getBoundingClientRect().top * -1
 
-		const mh = document.getElementById("main-header");
-
-		if (top <= (PQLPL.mhHeight / 2)) {
-
-			mh.style.setProperty("--height", (PQLPL.mhHeight - top) + "px");
-		}
+		// Dynamic height of the main-header. 
+		document.getElementById("main-header").style.setProperty("--height", (top <= (PQLPL.mhHeight / 2) ?  PQLPL.mhHeight - top : PQLPL.mhHeight / 2) + "px");
 
 		Array.prototype.forEach.call(document.getElementsByClassName("ms"), function(ms) {
 
