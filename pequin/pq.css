@@ -21,13 +21,41 @@
 
 #main-header {
 	position: fixed;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	justify-content: space-between;
 	top: 0;
 	right: 0;
 	left: 0;
 	--height: 64px;
 	height: var(--height);
 	background-color: rgba(66, 133, 133, 0.5);
-	pointer-events: none;
+	z-index: 2;
+}
+
+#logo {
+	position: relative;
+	width: var(--height);
+	background-color: rgba(0, 15, 100, 0.644);
+}
+
+#main-header > nav {
+	position: relative;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	background-color: rgba(0, 100, 0, 0.644);
+}
+
+#main-header > nav > a {
+	display: block;
+	line-height: var(--height);
+	background-color: lawngreen;
+}
+
+#main-header > nav > a:not(:first-child) {
+	margin-left: 12px;
 }
 
 section {
@@ -35,7 +63,6 @@ section {
 	min-height: 100vh;
 	width: auto;
 	overflow: hidden;
-	pointer-events: initial;
 	--offset: 0px;
 }
 
