@@ -54,10 +54,6 @@ a::before {
 	background-color: grey;
 }
 
-a:hover::after {
-	transform: scaleX(1);
-}
-
 #main-header {
 	position: fixed;
 	display: flex;
@@ -115,4 +111,10 @@ section::after {
 	background-position: center;
 	z-index: -1;
 	transform: translateY(calc(var(--offset) * 0.5));
+}
+
+@media (hover: hover) {
+	a:hover::after {
+		transform: scaleX(1);
+	}
 }
