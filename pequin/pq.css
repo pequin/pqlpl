@@ -14,9 +14,48 @@
  * limitations under the License.
  */
 
+:root {
+	--font-size: 16px;
+	font-size: var(--font-size);
+	line-height: calc(var(--font-size) * 1.5);
+}
+
 * {
 	margin: 0;
 	padding: 0;
+}
+
+a {
+	position: relative;
+	display: inline-block;
+	text-decoration: none;
+}
+
+a::after, a::before {
+	position: absolute;
+	bottom: 0;
+	left: -1px;
+	right: -1px;
+	content: "";
+	height: 4px;
+	display: block;
+	border-radius: 2px;
+}
+
+a::after {
+	transition-property: transform;
+	transition-duration: 300ms;
+	transition-timing-function: ease-out;
+	background-color: gold;
+	transform: scaleX(0);
+}
+
+a::before {
+	background-color: grey;
+}
+
+a:hover::after {
+	transform: scaleX(1);
 }
 
 #main-header {
@@ -49,9 +88,7 @@
 }
 
 #main-header > nav > a {
-	display: block;
 	line-height: var(--height);
-	background-color: lawngreen;
 }
 
 #main-header > nav > a:not(:first-child) {
