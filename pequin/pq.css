@@ -51,6 +51,9 @@ a::after {
 }
 
 a::before {
+	transition-property: transform;
+	transition-duration: 300ms;
+	transition-timing-function: ease-out;
 	background-color: grey;
 }
 
@@ -116,5 +119,8 @@ section::after {
 @media (hover: hover) {
 	a:hover::after {
 		transform: scaleX(1);
+	}
+	a:active::after {
+		transform: scale(0.5);
 	}
 }
