@@ -33,6 +33,7 @@ a {
 
 a::after, a::before {
 	position: absolute;
+	transition: 300ms transform ease-out;
 	bottom: 0;
 	left: -1px;
 	right: -1px;
@@ -43,17 +44,11 @@ a::after, a::before {
 }
 
 a::after {
-	transition-property: transform;
-	transition-duration: 300ms;
-	transition-timing-function: ease-out;
 	background-color: gold;
 	transform: scaleX(0);
 }
 
 a::before {
-	transition-property: transform;
-	transition-duration: 300ms;
-	transition-timing-function: ease-out;
 	background-color: grey;
 }
 
@@ -117,9 +112,11 @@ section::after {
 }
 
 @media (hover: hover) {
+
 	a:hover::after {
 		transform: scaleX(1);
 	}
+	
 	a:active::after {
 		transform: scale(0.5);
 	}
