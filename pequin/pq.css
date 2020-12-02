@@ -58,7 +58,8 @@ a::before {
 	display: flex;
 	flex-wrap: nowrap;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: center;
+	align-items: center;
 	top: 0;
 	right: 0;
 	left: 0;
@@ -68,13 +69,24 @@ a::before {
 	z-index: 2;
 }
 
+#main-header-conent {
+	position: relative;
+	width: var(--conent-width);
+	height: calc(var(--height) * 0.75);
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	justify-content: space-between;
+	background-color: rgba(139, 207, 49, 0.884);
+}
+
 #logo {
 	position: relative;
-	width: var(--height);
+	width: calc(var(--height) * 2);
 	background-color: rgba(0, 15, 100, 0.644);
 }
 
-#main-header > nav {
+#main-header-conent > nav {
 	position: relative;
 	display: flex;
 	flex-wrap: nowrap;
@@ -82,11 +94,13 @@ a::before {
 	background-color: rgba(0, 100, 0, 0.644);
 }
 
-#main-header > nav > a {
-	line-height: var(--height);
+#main-header-conent  > nav > a {
+	display: block;
+	line-height: calc(var(--height) * 0.75);
+	background-color: rgb(72, 255, 0);
 }
 
-#main-header > nav > a:not(:first-child) {
+#main-header-conent  > nav > a:not(:first-child) {
 	margin-left: 12px;
 }
 
@@ -166,6 +180,6 @@ section::after {
 @media only screen and (max-width: 640px) {
 
 	:root {
-		--conent-width: calc(100vw - 3px);
+		--conent-width: calc(100vw - 6px);
 	}
 }
