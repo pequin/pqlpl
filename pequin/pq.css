@@ -122,7 +122,7 @@ section:first-child .conent {
 
 .conent {
 	width: var(--conent-width);
-	background-color: rgba(5, 255, 159, 0.2)
+	background-color: rgba(5, 255, 159, 0.2);
 }
 
 section::after {
