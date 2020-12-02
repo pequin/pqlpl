@@ -41,7 +41,14 @@ class PQLPL {
 		const top = document.body.getBoundingClientRect().top * -1
 
 		// Dynamic height of the main-header. 
-		document.getElementById("main-header").style.setProperty("--height", (top <= (PQLPL.mhHeight / 2) ?  PQLPL.mhHeight - top : PQLPL.mhHeight / 2) + "px");
+		if (top >= 0) {
+
+			document.getElementById("main-header").style.setProperty("--height", (top <= 0 ||top <= (PQLPL.mhHeight / 2) ?  PQLPL.mhHeight - top : PQLPL.mhHeight / 2) + "px");
+
+		} else {
+
+			document.getElementById("main-header").style.setProperty("--height", PQLPL.mhHeight + "px");
+		}
 
 		Array.prototype.forEach.call(document.getElementsByClassName("ms"), function(ms) {
 
