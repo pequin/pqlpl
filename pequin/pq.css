@@ -15,6 +15,7 @@
  */
 
 :root {
+	--conent-width: 1440px;
 	--font-size: 16px;
 	font-size: var(--font-size);
 	line-height: calc(var(--font-size) * 1.5);
@@ -93,7 +94,7 @@ section {
 	position: relative;
 	display: grid;
 	grid-template-areas: "sb-l conent sb-r";
-	grid-template-columns: auto 1600px auto;
+	grid-template-columns: auto var(--conent-width) auto;
 	grid-template-rows: 100%;
 	min-height: 100vh;
 	width: auto;
@@ -145,5 +146,26 @@ section::after {
 	
 	a:active::after {
 		transform: scale(0.5);
+	}
+}
+
+@media only screen and (max-width: 1680px) {
+
+	.sb-l, .sb-r {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 641px) and (max-width: 1680px) {
+
+	:root {
+		--conent-width: 85.714286vw;
+	}
+}
+
+@media only screen and (max-width: 640px) {
+
+	:root {
+		--conent-width: calc(100vw - 3px);
 	}
 }
