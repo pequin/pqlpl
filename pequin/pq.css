@@ -91,10 +91,36 @@ a::before {
 
 section {
 	position: relative;
+	display: grid;
+	grid-template-areas: "sb-l conent sb-r";
+	grid-template-columns: auto 1600px auto;
+	grid-template-rows: 100%;
 	min-height: 100vh;
 	width: auto;
 	overflow: hidden;
 	--offset: 0px;
+}
+
+section:first-child .sb-l, section:first-child .conent, section:first-child .sb-r {
+	margin-top: 64px;
+}
+
+.sb-l {
+	grid-area: sb-l;
+}
+.conent {
+	grid-area: conent;
+}
+.sb-r {
+	grid-area: sb-r;
+}
+
+.sb-l, .sb-r {
+	background-color: rgba(5, 84, 255, 0.2)
+}
+
+.conent {
+	background-color: rgba(5, 255, 159, 0.2)
 }
 
 section::after {
