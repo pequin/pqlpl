@@ -19,6 +19,11 @@
 	padding: 0;
 }
 
+body {
+	font-size: var(--font-size);
+	line-height: calc(var(--font-size) * 1.5);
+}
+
 a {
 	position: relative;
 	display: inline-block;
@@ -38,12 +43,7 @@ a::after, a::before {
 }
 
 a::after {
-	background-color: gold;
 	transform: scaleX(0);
-}
-
-a::before {
-	background-color: grey;
 }
 
 #main-header {
@@ -58,7 +58,6 @@ a::before {
 	left: 0;
 	--height: 64px;
 	height: var(--height);
-	background-color: rgba(66, 133, 133, 0.5);
 	z-index: 2;
 }
 
@@ -70,13 +69,11 @@ a::before {
 	flex-wrap: nowrap;
 	flex-direction: row;
 	justify-content: space-between;
-	background-color: rgba(139, 207, 49, 0.884);
 }
 
 #logo {
 	position: relative;
 	width: calc(var(--height) * 2);
-	background-color: rgba(0, 15, 100, 0.644);
 }
 
 #main-header-conent > nav {
@@ -84,13 +81,11 @@ a::before {
 	display: flex;
 	flex-wrap: nowrap;
 	flex-direction: row;
-	background-color: rgba(0, 100, 0, 0.644);
 }
 
 #main-header-conent  > nav > a {
 	display: block;
 	line-height: calc(var(--height) * 0.75);
-	background-color: rgb(72, 255, 0);
 }
 
 #main-header-conent  > nav > a:not(:first-child) {
@@ -115,7 +110,6 @@ section:first-child .conent {
 
 .conent {
 	width: var(--conent-width);
-	background-color: rgba(5, 255, 159, 0.2);
 }
 
 section::after {
