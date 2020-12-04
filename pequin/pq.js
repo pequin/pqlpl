@@ -19,11 +19,19 @@ class PQLPL {
 	constructor() {
 
 		this.mhHeight = 0;
+		this.map = null; // Google map element.
+		// this.uluru = { lat: 0, lng: 0 }; // Google map uluru.
 
 		PQLPL.listeners();
 	}
 
 	static listeners() {
+
+		document.addEventListener("DOMContentLoaded", function() {
+
+			PQLPL.map = document.getElementById("map");
+
+		}, false);
 
 		window.addEventListener("load", function() {
 
@@ -96,6 +104,22 @@ class PQLPL {
 
 		PQLPL.daemon();
 	}
+}
+
+// Initialize and add the Google map.
+function map() {
+
+	const uluru = { lat: parseInt(PQLPL.map.dataset.lat), lng:  parseInt(PQLPL.map.dataset.lng) };
+	
+	const map = new google.maps.Map(PQLPL.map, {
+		zoom: parseInt(PQLPL.map.dataset.zoom),
+		center: uluru,
+	});
+
+	const marker = new google.maps.Marker({
+		position: uluru,
+		map: map,
+	});
 }
 
 const pqlp = new PQLPL();

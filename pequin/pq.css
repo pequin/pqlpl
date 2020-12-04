@@ -150,3 +150,9 @@ section::after {
 		--conent-width: calc(100vw - 6px);
 	}
 }
+
+/* TEMP!!! */
+#map {
+	height: 90%;
+	width: 100%;
+}
