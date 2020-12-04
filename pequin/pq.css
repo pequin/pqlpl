@@ -73,7 +73,7 @@ a::after {
 
 #logo {
 	position: relative;
-	width: calc(var(--height) * 2);
+	width: 48px;
 }
 
 #main-header-conent > nav {

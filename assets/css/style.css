@@ -22,6 +22,9 @@
 :root {
 	--conent-width: 1440px;
 	--font-size: 16px;
+
+	--color-active: #D93E3E;
+	--color-passive: #E4E4E4;
 }
 
 
@@ -35,8 +38,4 @@ a::before {
 
 #main-header {
 	background-color: rgba(66, 133, 133, 0.5);
-}
-
-#main-header-conent {
-	background-color: rgba(139, 207, 49, 0.884);
 }
