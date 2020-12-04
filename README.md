@@ -1,7 +1,7 @@
 # PQLPL
 Little landing page.
 
-## Goole maps.
+## Google maps.
 
 ### Get an API key
 1. Go to the [Google Cloud Console](https://cloud.google.com/console/google/maps-apis/overview)
