@@ -131,6 +131,16 @@ section::after {
 	transform: translateY(calc(var(--offset) * 0.5));
 }
 
+.not-supported {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: gray;
+	z-index: 10;
+}
+
 @media (hover: hover) {
 
 	a:hover::after {
