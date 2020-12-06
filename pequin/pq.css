@@ -24,13 +24,13 @@ body {
 	line-height: calc(var(--font-size) * 1.5);
 }
 
-a {
+nav > a {
 	position: relative;
 	display: inline-block;
 	text-decoration: none;
 }
 
-a::after, a::before {
+nav > a::after, nav > a::before {
 	position: absolute;
 	transition: 300ms transform ease-out;
 	bottom: 0;
@@ -42,7 +42,7 @@ a::after, a::before {
 	border-radius: 2px;
 }
 
-a::after {
+nav > a::after {
 	transform: scaleX(0);
 }
 

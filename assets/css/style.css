@@ -28,11 +28,11 @@
 }
 
 
-a::after {
+nav > a::after {
 	background-color: gold;
 }
 
-a::before {
+nav > a::before {
 	background-color: grey;
 }
 
