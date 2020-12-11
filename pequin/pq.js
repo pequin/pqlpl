@@ -20,7 +20,6 @@ class PQLPL {
 
 		this.mhHeight = 0;
 		this.map = null; // Google map element.
-		// this.uluru = { lat: 0, lng: 0 }; // Google map uluru.
 
 		PQLPL.listeners();
 	}
