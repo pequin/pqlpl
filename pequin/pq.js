@@ -31,6 +31,8 @@ class PQLPL {
 
 			PQLPL.map = document.getElementById("map");
 
+			document.body.id = "noLoaded";
+
 		}, false);
 
 		window.addEventListener("load", function() {

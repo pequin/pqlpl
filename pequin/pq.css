@@ -141,6 +141,40 @@ section::after {
 	z-index: 10;
 }
 
+body#noLoaded:before {
+	content: "";
+	display: block;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 100;
+	display: block;
+	background-color: rgb(76, 122, 37);
+}
+
+body#noLoaded:after {
+	content: "";
+	position: fixed;
+	display: block;
+	top: 50%;
+	left: 50%;
+	margin-top: -32px;
+	margin-left: -32px;
+	border-radius: 50%;
+	width: 64px;
+	height: 64px;
+	font-size: 10px;
+	transform: translateZ(0);
+	border-style: solid;
+	border-width: 8px;
+	border-color: rgba(255, 255, 255, 0.418);
+	border-top-color: rgba(255, 255, 255, 0.945);
+	animation: spinner 600ms infinite linear;
+	z-index: 101;
+}
+
 @media (hover: hover) {
 
 	a:hover::after {
@@ -163,6 +197,15 @@ section::after {
 
 	:root {
 		--conent-width: calc(100vw - 6px);
+	}
+}
+
+@keyframes spinner {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
 	}
 }
 
