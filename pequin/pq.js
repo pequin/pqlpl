@@ -62,11 +62,12 @@ class PQLPL {
 		Array.prototype.forEach.call(document.getElementsByClassName("ms"), function(ms) {
 
 			const offset = (ms.offsetTop - top) * -1;
-			const percent = 1 - Math.abs((ms.offsetTop - top) / ms.clientHeight);
+			const percent = 1 - Math.abs(offset / ms.clientHeight);
 
 			if (percent >= 0) {
 
 				ms.style.setProperty("--offset", offset + "px");
+				ms.style.setProperty("--percent", (percent * 100) + "%");
 			}
 
 			if (percent >= 0.25) {
