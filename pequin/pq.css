@@ -107,6 +107,9 @@ section {
 	width: auto;
 	overflow: hidden;
 	--offset: 0px;
+	--percent: 0%;
+	--vh: 0vh;
+	--deg: 0deg;
 }
 
 section:first-child .conent {
