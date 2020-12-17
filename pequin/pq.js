@@ -100,6 +100,60 @@ class PQLPL {
 			}
 
 		});
+		
+		Array.prototype.forEach.call(document.getElementsByClassName("slider-3d"), function(slider) {
+
+			const rect = slider.getBoundingClientRect();
+
+				const images = slider.children;
+
+				const percent = rect.top / (window.innerHeight - slider.clientHeight);
+
+				const frame = parseInt(images.length * percent);
+
+				var i = 0;
+				Array.prototype.forEach.call(images, function(img) {
+
+					if (frame >= 0 && frame < images.length) {
+
+						if (frame == i) {
+
+							img.style.visibility = "visible";
+
+						} else {
+
+							img.style.visibility = null;
+						}
+
+					} else if (frame < 0) {
+
+						if (i == 0) {
+
+							img.style.visibility = "visible";
+
+						} else {
+
+							img.style.visibility = null;
+
+						}
+
+					} else if (frame > images.length) {
+
+						if (i == (images.length - 1)) {
+
+							img.style.visibility = "visible";
+
+						} else {
+
+							img.style.visibility = null;
+
+						}
+					}
+
+					i++;
+				});
+
+		});
 
 		requestAnimationFrame(PQLPL.daemon);
 	}
