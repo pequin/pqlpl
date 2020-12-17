@@ -134,6 +134,20 @@ section::after {
 	transform: translateY(calc(var(--offset) * 0.5));
 }
 
+.slider-3d {
+	position: relative;
+	height: var(--height);
+	width: calc(var(--height) * var(--proportion));
+}
+
+.slider-3d img {
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+}
+
 .not-supported {
 	position: fixed;
 	top: 0;
