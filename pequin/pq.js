@@ -105,53 +105,25 @@ class PQLPL {
 
 			const rect = slider.getBoundingClientRect();
 
-				const images = slider.children;
+				const frames = slider.dataset.frames;
 
-				const percent = rect.top / (window.innerHeight - slider.clientHeight);
+				const percent = rect.top / window.innerHeight;
 
-				const frame = parseInt(images.length * percent);
+				const frame = (slider.clientWidth * parseInt(frames * percent)) * -1;
 
-				var i = 0;
-				Array.prototype.forEach.call(images, function(img) {
+				if (percent > 1) {
 
-					if (frame >= 0 && frame < images.length) {
+					slider.style.setProperty("--frame", ((slider.clientWidth * frames) * -1) + "px");
+				
+				} else if (percent < 0 ) {
 
-						if (frame == i) {
+					slider.style.setProperty("--frame", 0 + "px");
 
-							img.style.visibility = "visible";
+				} else {
 
-						} else {
+					slider.style.setProperty("--frame", frame + "px");
 
-							img.style.visibility = null;
-						}
-
-					} else if (frame < 0) {
-
-						if (i == 0) {
-
-							img.style.visibility = "visible";
-
-						} else {
-
-							img.style.visibility = null;
-
-						}
-
-					} else if (frame > images.length) {
-
-						if (i == (images.length - 1)) {
-
-							img.style.visibility = "visible";
-
-						} else {
-
-							img.style.visibility = null;
-
-						}
-					}
-
-					i++;
-				});
+				}
 
 		});
 
