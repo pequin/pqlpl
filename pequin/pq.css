@@ -136,16 +136,21 @@ section::after {
 
 .slider-3d {
 	position: relative;
-	height: var(--height);
-	width: calc(var(--height) * var(--proportion));
+	width: var(--size);
+	height: var(--size);
 }
 
-.slider-3d img {
+.slider-3d::before{
 	display: block;
 	position: absolute;
-	width: 100%;
-	height: 100%;
-	visibility: hidden;
+	content: "";
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	background-position: var(--frame);
 }
 
 .not-supported {
